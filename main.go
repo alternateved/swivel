@@ -28,6 +28,7 @@ func main() {
 
 	container, focused := findFocusedContainer(tree, tree)
 	if container == nil || focused == nil || len(container.Nodes) < 2 {
+		fmt.Fprintln(os.Stderr, "no container found or insufficient windows")
 		os.Exit(0)
 	}
 
